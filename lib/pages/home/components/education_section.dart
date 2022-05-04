@@ -11,7 +11,7 @@ final List<Education> educationList = [
     description:
         "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below",
     linkName: "www.flutterpanda.com",
-    period: "2019 - PRESENT",
+    period: "2012 - PRESENT",
   ),
   Education(
     description:

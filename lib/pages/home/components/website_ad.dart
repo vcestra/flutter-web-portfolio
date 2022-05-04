@@ -40,7 +40,7 @@ class WebsiteAd extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "WEBSITE",
+                          "WEB APPLICATION",
                           style: GoogleFonts.oswald(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w900,
@@ -51,7 +51,7 @@ class WebsiteAd extends StatelessWidget {
                           height: 15.0,
                         ),
                         Text(
-                          "EVOLVING NAGA\nRESORT WEBSITE",
+                          "JAVA DEVELOPER\nAND NOT JUST",
                           style: GoogleFonts.oswald(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
@@ -63,7 +63,7 @@ class WebsiteAd extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          "This is a random text about the project, I should have used the regular lorem ipsum text, but I am too lazy to search for that. This should be long enough",
+                          "I have developed several web application. Such as backend developer, I create services in REST architecture and deploy them on Docker container. I have also used Angular framework to create Front End layer for many projects.",
                           style: TextStyle(
                             color: kCaptionColor,
                             height: 1.5,
@@ -72,65 +72,6 @@ class WebsiteAd extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 25.0,
-                        ),
-                        Row(
-                          children: [
-                            MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: kPrimaryColor,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                height: 48.0,
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 28.0,
-                                ),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      "EXPLORE MORE",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-                            MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(
-                                    color: kPrimaryColor,
-                                  ),
-                                ),
-                                height: 48.0,
-                                padding: EdgeInsets.symmetric(horizontal: 28.0),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      "NEXT APP",
-                                      style: TextStyle(
-                                        color: kPrimaryColor,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
                         ),
                         SizedBox(
                           height: 70.0,

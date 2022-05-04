@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 
@@ -35,7 +36,7 @@ class IosAppAd extends StatelessWidget {
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
                     child: Image.asset(
-                      "assets/ios.png",
+                      "assets/android.png",
                       // Set width for image on smaller screen
                       width: constraints.maxWidth > 720.0 ? null : 350.0,
                     ),
@@ -47,7 +48,7 @@ class IosAppAd extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "IOS APP",
+                          "Android APP",
                           style: GoogleFonts.oswald(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w900,
@@ -58,7 +59,7 @@ class IosAppAd extends StatelessWidget {
                           height: 15.0,
                         ),
                         Text(
-                          "UNIVERSAL\nSMART HOME APP",
+                          "ALPHABET GAME",
                           style: GoogleFonts.oswald(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
@@ -70,7 +71,7 @@ class IosAppAd extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          "This is a random text about the project, I should have used the regular lorem ipsum text, but I am too lazy to search for that. This should be long enough",
+                          "Quiz game made with Flutter and Firebase. Published on Play Store",
                           style: TextStyle(
                             color: kCaptionColor,
                             height: 1.5,
@@ -94,7 +95,9 @@ class IosAppAd extends StatelessWidget {
                                   horizontal: 28.0,
                                 ),
                                 child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    launchUrl(Uri.parse('https://play.google.com/store/apps/dev?id=8654252940909072621'));
+                                  },
                                   child: Center(
                                     child: Text(
                                       "EXPLORE MORE",
@@ -108,35 +111,6 @@ class IosAppAd extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-                            MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(
-                                    color: kPrimaryColor,
-                                  ),
-                                ),
-                                height: 48.0,
-                                padding: EdgeInsets.symmetric(horizontal: 28.0),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      "NEXT APP",
-                                      style: TextStyle(
-                                        color: kPrimaryColor,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
                           ],
                         )
                       ],

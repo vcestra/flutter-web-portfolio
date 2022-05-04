@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/design_process.dart';
@@ -10,8 +10,7 @@ final List<DesignProcess> designProcesses = [
   DesignProcess(
     title: "DESIGN",
     imagePath: "assets/design.png",
-    subtitle:
-        "A full stack allround designer thay may or may not include a guide for specific creative",
+    subtitle: "Design ",
   ),
   DesignProcess(
     title: "DEVELOP",
@@ -20,17 +19,11 @@ final List<DesignProcess> designProcesses = [
         "A full stack allround developer thay may or may not include a guide for specific creative",
   ),
   DesignProcess(
-    title: "WRITE",
+    title: "MOBILE",
     imagePath: "assets/write.png",
     subtitle:
         "A full stack allround writer thay may or may not include a guide for specific creative",
-  ),
-  DesignProcess(
-    title: "PROMOTE",
-    imagePath: "assets/promote.png",
-    subtitle:
-        "A full stack allround promoter thay may or may not include a guide for specific creative",
-  ),
+  )
 ];
 
 class CvSection extends StatelessWidget {
@@ -56,10 +49,9 @@ class CvSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "BETTER DESIGN,\nBETTER EXPERIENCES",
+                "APPS MADE WITH",
                 style: GoogleFonts.oswald(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -67,6 +59,9 @@ class CvSection extends StatelessWidget {
                   fontSize: 18.0,
                 ),
               ),
+              SizedBox(width: 5,),
+              Icon(FontAwesome.heart, color: kPrimaryColor, size: 20,),
+              Spacer(),
               GestureDetector(
                 onTap: () {},
                 child: MouseRegion(
@@ -83,74 +78,6 @@ class CvSection extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 50.0,
-          ),
-          Container(
-            child: LayoutBuilder(
-              builder: (_context, constraints) {
-                return ResponsiveGridView.builder(
-                  padding: EdgeInsets.all(0.0),
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  alignment: Alignment.topCenter,
-                  gridDelegate: ResponsiveGridDelegate(
-                    mainAxisSpacing: 20.0,
-                    crossAxisSpacing: 20.0,
-                    maxCrossAxisExtent: ScreenHelper.isTablet(context) ||
-                            ScreenHelper.isMobile(context)
-                        ? constraints.maxWidth / 2.0
-                        : 250.0,
-                    // Hack to adjust child height
-                    childAspectRatio: ScreenHelper.isDesktop(context)
-                        ? 1
-                        : MediaQuery.of(context).size.aspectRatio * 1.5,
-                  ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                designProcesses[index].imagePath,
-                                width: 40.0,
-                              ),
-                              SizedBox(
-                                width: 15.0,
-                              ),
-                              Text(
-                                designProcesses[index].title,
-                                style: GoogleFonts.oswald(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 15.0,
-                          ),
-                          Text(
-                            designProcesses[index].subtitle,
-                            style: TextStyle(
-                              color: kCaptionColor,
-                              height: 1.5,
-                              fontSize: 14.0,
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: designProcesses.length,
-                );
-              },
-            ),
-          )
         ],
       ),
     );

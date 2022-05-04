@@ -3,26 +3,17 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/models/header_item.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 
 List<HeaderItem> headerItems = [
+  HeaderItem(title: "GITHUB", onTap: () => launchUrl(Uri.parse('https://github.com/vcestra')) ,  iconData: FontAwesome.github),
+  HeaderItem(title: "LINKEDIN", onTap: () => launchUrl(Uri.parse('https://it.linkedin.com/in/vincenzo-cestra-5272b254')), iconData: FontAwesome.linkedin_square),
   HeaderItem(
-    title: "HOME",
-    onTap: () {},
-  ),
-  HeaderItem(title: "MY INTRO", onTap: () {}),
-  HeaderItem(title: "SERVICES", onTap: () {}),
-  HeaderItem(title: "PORTFOLIO", onTap: () {}),
-  HeaderItem(title: "TESTIMONIALS", onTap: () {}),
-  HeaderItem(title: "BLOGS", onTap: () {}),
-  HeaderItem(
-    title: "HIRE ME",
-    onTap: () {},
-    isButton: true,
-  ),
+      title: "PLAY STORE", onTap: () => launchUrl(Uri.parse('https://play.google.com/store/apps/dev?id=8654252940909072621')), iconData: FontAwesome.google),
 ];
 
 class HeaderLogo extends StatelessWidget {
@@ -37,7 +28,7 @@ class HeaderLogo extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: "M",
+                  text: "@",
                   style: GoogleFonts.oswald(
                     color: Colors.white,
                     fontSize: 32.0,
@@ -45,7 +36,7 @@ class HeaderLogo extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: ".",
+                  text: "vcestra",
                   style: GoogleFonts.oswald(
                     color: kPrimaryColor,
                     fontSize: 36.0,
@@ -101,13 +92,19 @@ class HeaderRow extends StatelessWidget {
                         margin: EdgeInsets.only(right: 30.0),
                         child: GestureDetector(
                           onTap: item.onTap,
-                          child: Text(
-                            item.title,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          child: Row(
+                            children: [
+                              Icon(item.iconData, color: Colors.white),
+                              SizedBox(width: 10,),
+                              Text(
+                                item.title,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
